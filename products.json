@@ -1,0 +1,208 @@
+{
+  "site": {
+    "brand": "KuhyaKuya",
+    "productLabel": "Products"
+  },
+  "products": [
+    {
+      "id": "ez-guys",
+      "name": "EZ Guys Complete",
+      "subtitle": "Adobe Premiere Pro workflow toolkit",
+      "description": "A compact collection of workflow tools for creating reusable clip packs, arranging selected clips, and fitting the active sequence to your work.",
+      "status": "In development",
+      "platform": "Adobe Premiere Pro",
+      "minVersion": "25.6",
+      "technology": "UXP",
+      "media": {
+        "mode": "none",
+        "youtubeId": "",
+        "screenshots": []
+      },
+      "purchaseUrl": "",
+      "features": [
+        {
+          "title": "RCP Library",
+          "description": "Create reusable clip packs, manage a library, and import packs into other Premiere projects."
+        },
+        {
+          "title": "Align",
+          "description": "Align selected clips to a sequence or group reference using six directional alignment operations and an adjustable offset."
+        },
+        {
+          "title": "Distribute",
+          "description": "Space or position multiple selected clips along vertical or horizontal axes using eight distribution operations."
+        },
+        {
+          "title": "Sequence Fit",
+          "description": "Adjust the active sequence frame dimensions using Source or Bounds modes for the selected clips."
+        }
+      ],
+      "docs": [
+        {
+          "id": "overview",
+          "title": "Overview",
+          "category": "Introduction",
+          "summary": "What EZ Guys is and where to start.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "EZ Guys is a Premiere Pro UXP toolkit focused on reusable content, clip alignment, distribution, and sequence framing."
+            },
+            {
+              "type": "paragraph",
+              "text": "The source manifest describes Premiere Pro 25.6.0 as the minimum host version. The website is a documentation preview while the product is in development."
+            },
+            {
+              "type": "note",
+              "text": "This website documents observed controls in the current development source. Behavior, availability, and compatibility should be verified again before public release."
+            }
+          ]
+        },
+        {
+          "id": "rcp",
+          "title": "RCP Library",
+          "category": "Toolkit",
+          "summary": "Create and re-use clip packs.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "RCP Library provides a workflow to create a reusable pack from project content, choose a library folder, browse saved packs, and import them into a Premiere project."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Open the RCP Library panel or the RCP tools in EZ Guys.",
+                "Connect a library location and review the available packs.",
+                "Use Create RCP to prepare a reusable pack; review the source-asset requirements first.",
+                "Import a saved pack into your active project when needed."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "The current implementation recognizes asset modes such as Bundled, Library Linked, and Assetless, with project-local tracking for imported packs."
+            },
+            {
+              "type": "note",
+              "text": "RCP features depend on the clip pack and its underlying media. Test your own projects before relying on a pack in production."
+            }
+          ]
+        },
+        {
+          "id": "align",
+          "title": "Align",
+          "category": "Toolkit",
+          "summary": "Six positional alignment controls.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Align provides Top, Vertical Center, Bottom, Left, Horizontal Center, and Right operations for the selected clips."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Select one or more supported clips in the active Premiere sequence.",
+                "Choose Sequence or Group alignment where the UI provides that option.",
+                "Pick the direction or center axis.",
+                "Use the Offset field when you need additional spacing from the chosen alignment target."
+              ]
+            },
+            {
+              "type": "note",
+              "text": "The offset uses pixels. Positive and negative values affect placement relative to the selected alignment target."
+            }
+          ]
+        },
+        {
+          "id": "distribute",
+          "title": "Distribute",
+          "category": "Toolkit",
+          "summary": "Position and space multiple clips.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Distribute includes Vertical Top, Center, and Bottom; Horizontal Left, Center, and Right; plus Horizontal Spacing and Vertical Spacing."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Select the clips to arrange.",
+                "Choose an axis-based distribute operation to position the selection.",
+                "Choose spacing mode when your goal is to make the gaps between clips consistent.",
+                "Review the resulting positions and adjust your selection as needed."
+              ]
+            },
+            {
+              "type": "note",
+              "text": "Spacing and axis distribution are different operations. Try both when composing repeated elements."
+            }
+          ]
+        },
+        {
+          "id": "sequence-fit",
+          "title": "Sequence Fit",
+          "category": "Toolkit",
+          "summary": "Frame the sequence around selected material.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Sequence Fit displays a Target Frame Size preview and supports Source and Bounds modes."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Open the Sequence Utility panel or the Sequence Fit card.",
+                "Select one or more compatible clips.",
+                "Choose Source or Bounds.",
+                "Inspect the Target Frame Size preview and apply the operation."
+              ]
+            },
+            {
+              "type": "note",
+              "text": "Sequence Fit changes sequence framing. It is not AI upscaling and does not invent new pixel detail."
+            }
+          ]
+        },
+        {
+          "id": "getting-started",
+          "title": "Getting Started",
+          "category": "Support",
+          "summary": "Installation and compatibility basics.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "EZ Guys is developed as an Adobe Premiere Pro UXP plugin. In the development source, its manifest specifies Premiere Pro 25.6.0 or later."
+            },
+            {
+              "type": "paragraph",
+              "text": "For development testing, the UXP Developer Tool can load the plugin through its manifest. A public distribution and installation guide will be added when the release package is available."
+            },
+            {
+              "type": "note",
+              "text": "Public downloads, supported operating systems, and licensing details are not published here yet."
+            }
+          ]
+        },
+        {
+          "id": "faq",
+          "title": "FAQ",
+          "category": "Support",
+          "summary": "Questions and release information.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Is EZ Guys available for purchase? Not yet listed through this website. The product is currently marked In development."
+            },
+            {
+              "type": "paragraph",
+              "text": "Will there be standalone products? They are under consideration, but the website does not present unannounced products or prices as final."
+            },
+            {
+              "type": "paragraph",
+              "text": "Where can I see the demo? A YouTube demo and screenshots can be enabled on the product page once approved media assets are available."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
