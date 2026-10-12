@@ -4,112 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#151519">
-  <meta name="description" content="KuhyaKuya Product Hub — creative tools, product updates, and documentation. Discover EZ Guys for Adobe Premiere Pro.">
-  <title>KuhyaKuya — Products & Documentation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Browse KuhyaKuya software, plugins, utilities, documentation, and release information.">
+  <title>KuhyaKuya Product Hub</title>
+  <script>
+    (function () {
+      var redirectedRoute = new URLSearchParams(location.search).get("route");
+      window.__productHubRedirectRoute = redirectedRoute && redirectedRoute.charAt(0) === "/" ? redirectedRoute : "";
+    }());
+  </script>
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="site-shell">
-    <header class="topbar">
-      <div class="shell topbar-inner">
-        <a class="brand" href="#home" aria-label="KuhyaKuya Products, home">
-          <span class="brand-symbol" aria-hidden="true">K<span class="brand-dot">.</span></span>
-          <span class="brand-name">KUHYAKUYA<span class="brand-divider">/</span><span class="brand-section">PRODUCTS</span></span>
-        </a>
-        <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button>
-        <nav id="main-nav" class="nav" aria-label="Main navigation">
-          <a href="#home" data-nav="home">Home</a>
-          <a href="#products" data-nav="products">Products</a>
-          <a href="#docs" data-nav="docs">Documentation</a>
-          <a class="nav-external" href="https://kuhyakuya.com/" target="_blank" rel="noopener noreferrer">KuhyaKuya <span aria-hidden="true">↗</span></a>
-        </nav>
-      </div>
-    </header>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" data-home-link href="./" aria-label="KuhyaKuya Product Hub, home">
+        <span>KuhyaKuya</span><span class="wordmark-context">Product Hub</span>
+      </a>
+      <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a data-nav="catalog" data-home-link href="./">Product index</a>
+        <span id="context-nav"></span>
+        <a href="https://kuhyakuya.com/" target="_blank" rel="noopener noreferrer">Main website <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
 
-    <main id="main">
-      <div id="view-home" class="route-view">
-        <section class="hero shell" aria-labelledby="hero-heading">
-          <div class="hero-copy">
-            <span class="eyebrow"><span class="pulse-dot"></span> KUHYAKUYA CREATIVE TOOLS</span>
-            <h1 id="hero-heading">Less busywork.<br><span class="subtle">More creating.</span></h1>
-            <p class="lead">A home for tools built around the way you edit. Discover products, explore features, and find the answers you need—all in one place.</p>
-            <div class="action-row">
-              <a class="button button-primary" href="#products">Explore products <span aria-hidden="true">↗</span></a>
-              <a class="button button-ghost" href="#docs">Read documentation <span aria-hidden="true">→</span></a>
-            </div>
-            <p class="hero-footnote"><span class="mini-square"></span> Designed for real creative workflows.</p>
-          </div>
-          <div class="hero-art" aria-label="Illustrative preview of the EZ Guys toolkit">
-            <div class="art-header"><span class="art-dots"><i></i><i></i><i></i></span><span>PREMIERE PRO / WORKSPACE</span><span>EZ / 01</span></div>
-            <div class="art-canvas">
-              <div class="art-left">
-                <span class="art-kicker">YOUR WORKFLOW, SIMPLIFIED</span>
-                <div class="art-heading">Make it.<br>Reuse it.</div>
-                <div class="art-caption">RCP / ALIGN / DISTRIBUTE / FIT</div>
-                <div class="timeline"><span></span><span></span><span></span><span></span><span></span></div>
-              </div>
-              <div class="mini-panel">
-                <div class="mini-panel-top"><span class="mini-logo">✳</span><b>EZ Guys</b><span class="mini-end">•••</span></div>
-                <div class="mini-block"><div class="mini-label">RCP LIBRARY</div><div class="mini-buttons"><i>+</i><i>▤</i><i>↗</i></div></div>
-                <div class="mini-block"><div class="mini-label">ALIGN</div><div class="align-icons"><i>⊢</i><i>↔</i><i>⊣</i><i>⊤</i><i>↕</i><i>⊥</i></div></div>
-                <div class="mini-block"><div class="mini-label">DISTRIBUTE</div><div class="align-icons"><i>▥</i><i>⫶</i><i>▤</i><i>⋮</i><i>☷</i><i>⋯</i></div></div>
-                <div class="mini-block mini-block-last"><div class="mini-label">SEQUENCE FIT</div><div class="mini-switch"><span class="active">Source</span><span>Bounds</span></div></div>
-              </div>
-            </div>
-            <div class="art-footer"><span><i class="online-dot"></i> TOOLKIT PREVIEW</span><span>Illustrative UI · Not a live plugin screenshot</span></div>
-          </div>
-        </section>
+  <main id="main" tabindex="-1">
+    <div id="app" class="shell app-shell" aria-live="polite"></div>
+  </main>
 
-        <section class="intro-strip" aria-label="Product principles">
-          <div class="shell strip-inner"><span><b>01</b> Built for editors</span><span><b>02</b> Thoughtful tools</span><span><b>03</b> Clear documentation</span></div>
-        </section>
-
-        <section class="section shell" id="products" aria-labelledby="products-title">
-          <div class="section-head"><div><div class="section-index">01 / PRODUCT COLLECTION</div><h2 id="products-title">Tools worth keeping<br><span class="muted">in your workflow.</span></h2></div><p>Start with what you need. Dive into details, functionality, and practical guides.</p></div>
-          <div id="product-list" class="product-grid" aria-live="polite"></div>
-        </section>
-
-        <section class="section shell section-features" aria-labelledby="features-title">
-          <div class="section-head"><div><div class="section-index">02 / FEATURE SPOTLIGHT</div><h2 id="features-title">The little things<br><span class="muted">add up.</span></h2></div><p>Less time arranging. More time finishing the creative work that actually matters.</p></div>
-          <div class="features-grid" id="feature-list"></div>
-        </section>
-
-        <section class="section shell docs-intro" aria-labelledby="docs-title">
-          <div class="docs-callout">
-            <div><div class="section-index">03 / DOCUMENTATION</div><h2 id="docs-title">Good tools.<br>Better guidance.</h2><p>Feature explanations, workflows, compatibility, and answers—without leaving the product hub.</p><a class="button button-light" href="#docs">Browse documentation <span aria-hidden="true">↗</span></a></div>
-            <div class="docs-callout-art" aria-hidden="true"><div class="doc-paper"><span>DOCUMENTATION / EZ GUYS</span><b>Start here.</b><i></i><i></i><i></i><i></i><i></i></div><div class="doc-orbit">?</div></div>
-          </div>
-        </section>
-      </div>
-
-      <div id="view-product" class="route-view" hidden>
-        <div class="shell product-layout">
-          <a href="#products" class="back-link">← All products</a>
-          <div id="product-content"></div>
-        </div>
-      </div>
-
-      <div id="view-docs" class="route-view" hidden>
-        <div class="shell docs-page">
-          <div class="page-heading"><div class="section-index">KUHYAKUYA / KNOWLEDGE BASE</div><h1>Documentation<span class="accent">.</span></h1><p>Reference guides and workflows for KuhyaKuya products.</p></div>
-          <div class="docs-layout">
-            <aside class="docs-sidebar" aria-label="Documentation topics">
-              <label class="search-wrap" for="docs-search"><span aria-hidden="true">⌕</span><input id="docs-search" type="search" placeholder="Search topics..." autocomplete="off"></label>
-              <div class="sidebar-caption">EZ GUYS / GUIDES</div>
-              <nav id="docs-nav" aria-label="Topic navigation"></nav>
-            </aside>
-            <article id="docs-article" class="docs-article" tabindex="-1" aria-live="polite"></article>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer class="footer"><div class="shell footer-inner"><div><a class="footer-brand" href="#home">KUHYAKUYA<span class="accent">.</span></a><p>Creative things, thoughtfully built.</p></div><div class="footer-links"><a href="#products">Products</a><a href="#docs">Documentation</a><a href="https://kuhyakuya.com/" target="_blank" rel="noopener noreferrer">Main website ↗</a></div><div class="footer-bottom">© <span id="year"></span> KuhyaKuya <span>Independent creative tools.</span></div></div></footer>
-  </div>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><strong>KuhyaKuya</strong><p>Independent workspace.</p></div>
+      <div class="footer-meta"><span>Product Hub</span><span>© <span id="year"></span> KuhyaKuya</span></div>
+    </div>
+  </footer>
 </body>
 </html>

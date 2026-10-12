@@ -1,43 +1,74 @@
 {
+  "$schema": "./product-schema.json",
+  "schemaVersion": 1,
   "site": {
     "brand": "KuhyaKuya",
     "productLabel": "Products"
   },
   "products": [
     {
-      "id": "ez-guys",
+      "id": "ez-guys-pr",
       "name": "EZ Guys Complete",
+      "category": "Plugin",
       "subtitle": "Adobe Premiere Pro workflow toolkit",
       "description": "A compact collection of workflow tools for creating reusable clip packs, arranging selected clips, and fitting the active sequence to your work.",
       "status": "In development",
-      "platform": "Adobe Premiere Pro",
-      "minVersion": "25.6",
-      "technology": "UXP",
-      "media": {
-        "mode": "none",
-        "youtubeId": "",
-        "screenshots": []
-      },
-      "purchaseUrl": "",
-      "features": [
+      "version": "",
+      "metadata": [
         {
-          "title": "RCP Library",
-          "description": "Create reusable clip packs, manage a library, and import packs into other Premiere projects."
+          "label": "Platform",
+          "value": "Adobe Premiere Pro"
         },
         {
-          "title": "Align",
-          "description": "Align selected clips to a sequence or group reference using six directional alignment operations and an adjustable offset."
+          "label": "Minimum version",
+          "value": "25.6+"
         },
         {
-          "title": "Distribute",
-          "description": "Space or position multiple selected clips along vertical or horizontal axes using eight distribution operations."
-        },
-        {
-          "title": "Sequence Fit",
-          "description": "Adjust the active sequence frame dimensions using Source or Bounds modes for the selected clips."
+          "label": "Technology",
+          "value": "UXP"
         }
       ],
-      "docs": [
+      "media": {
+        "demoVideo": {
+          "youtubeId": "M7lc1UVf-VE",
+          "title": "Demo video placeholder"
+        }
+      },
+      "primaryAction": {
+        "label": "Access product",
+        "url": "https://www.youtube.com/"
+      },
+      "changelog": [],
+      "sections": [
+        {
+          "id": "included-tools",
+          "type": "item-list",
+          "eyebrow": "Capabilities",
+          "title": "Included tools",
+          "description": "Features documented from the current development source.",
+          "items": [
+            {
+              "title": "RCP Library",
+              "description": "Create reusable clip packs, manage a library, and import packs into other Premiere projects."
+            },
+            {
+              "title": "Align",
+              "description": "Align selected clips to a sequence or group reference using six directional alignment operations and an adjustable offset."
+            },
+            {
+              "title": "Distribute",
+              "description": "Space or position multiple selected clips along vertical or horizontal axes using eight distribution operations."
+            },
+            {
+              "title": "Sequence Fit",
+              "description": "Adjust the active sequence frame dimensions using Source or Bounds modes for the selected clips."
+            }
+          ]
+        }
+      ],
+      "documentation": {
+        "description": "Product guides, usage notes, and supporting information.",
+        "topics": [
         {
           "id": "overview",
           "title": "Overview",
@@ -63,6 +94,13 @@
           "title": "RCP Library",
           "category": "Toolkit",
           "summary": "Create and re-use clip packs.",
+          "screenshots": [
+            {
+              "src": "assets/screenshots/rcp-library-placeholder.svg",
+              "alt": "Placeholder preview for the RCP Library tool",
+              "caption": "Demo asset — replace with an approved RCP Library screenshot."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -92,6 +130,13 @@
           "title": "Align",
           "category": "Toolkit",
           "summary": "Six positional alignment controls.",
+          "screenshots": [
+            {
+              "src": "assets/screenshots/align-placeholder.svg",
+              "alt": "Placeholder preview for the Align tool",
+              "caption": "Demo asset — replace with an approved Align screenshot."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -117,6 +162,13 @@
           "title": "Distribute",
           "category": "Toolkit",
           "summary": "Position and space multiple clips.",
+          "screenshots": [
+            {
+              "src": "assets/screenshots/distribute-placeholder.svg",
+              "alt": "Placeholder preview for the Distribute tool",
+              "caption": "Demo asset — replace with an approved Distribute screenshot."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -142,6 +194,13 @@
           "title": "Sequence Fit",
           "category": "Toolkit",
           "summary": "Frame the sequence around selected material.",
+          "screenshots": [
+            {
+              "src": "assets/screenshots/sequence-fit-placeholder.svg",
+              "alt": "Placeholder preview for the Sequence Fit tool",
+              "caption": "Demo asset — replace with an approved Sequence Fit screenshot."
+            }
+          ],
           "blocks": [
             {
               "type": "paragraph",
@@ -198,11 +257,12 @@
             },
             {
               "type": "paragraph",
-              "text": "Where can I see the demo? A YouTube demo and screenshots can be enabled on the product page once approved media assets are available."
+              "text": "Where can I see the demo? A YouTube demo can be enabled on the product page, while approved screenshots can be added to each tool's documentation topic."
             }
           ]
         }
-      ]
+        ]
+      }
     }
   ]
 }

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://product.kuhyakuya.com/product-schema.json",
+  "title": "KuhyaKuya Product Hub catalog",
+  "type": "object",
+  "required": ["schemaVersion", "products"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "site": { "type": "object" },
+    "products": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/product" }
+    }
+  },
+  "$defs": {
+    "product": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "name": { "type": "string", "minLength": 1 },
+        "category": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string" },
+        "version": { "type": "string" },
+        "primaryAction": {
+          "type": "object",
+          "required": ["url"],
+          "properties": {
+            "label": { "type": "string" },
+            "url": { "type": "string" }
+          }
+        },
+        "metadata": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "value"],
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": ["string", "number", "boolean"] }
+            }
+          }
+        },
+        "media": {
+          "type": "object",
+          "properties": {
+            "cover": { "type": "string" },
+            "eyebrow": { "type": "string" },
+            "heading": { "type": "string" },
+            "description": { "type": "string" },
+            "demoVideo": {
+              "type": "object",
+              "properties": {
+                "youtubeId": { "type": "string" },
+                "title": { "type": "string" }
+              }
+            }
+          }
+        },
+        "sections": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/section" }
+        },
+        "documentation": {
+          "type": "object",
+          "properties": {
+            "description": { "type": "string" },
+            "topics": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/topic" }
+            }
+          }
+        },
+        "changelog": { "type": "array" }
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "enum": ["item-list", "content"] },
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "items": { "type": "array" },
+        "blocks": { "type": "array" }
+      }
+    },
+    "topic": {
+      "type": "object",
+      "required": ["id", "title"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "summary": { "type": "string" },
+        "screenshots": { "type": "array" },
+        "blocks": { "type": "array" }
+      }
+    }
+  }
+}

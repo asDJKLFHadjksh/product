@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sequence Fit demo placeholder</title>
+  <desc id="desc">A clearly labelled mock interface used as temporary documentation media.</desc>
+  <rect width="1600" height="900" fill="#111115"/>
+  <rect x="80" y="70" width="1440" height="760" rx="28" fill="#1b1b20" stroke="#3b3b45" stroke-width="3"/>
+  <rect x="80" y="70" width="1440" height="86" rx="28" fill="#24242b"/>
+  <text x="1260" y="120" fill="#b9a0ff" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">DEMO ASSET</text>
+  <text x="140" y="235" fill="#f2f0f7" font-family="Arial, sans-serif" font-size="46" font-weight="700">Sequence Fit</text>
+  <text x="140" y="280" fill="#9995a1" font-family="Arial, sans-serif" font-size="21">Target frame size preview with Source and Bounds modes</text>
+  <rect x="140" y="335" width="420" height="410" rx="20" fill="#202027"/>
+  <text x="185" y="400" fill="#8f8b98" font-family="Arial, sans-serif" font-size="18">Target frame size</text>
+  <text x="185" y="458" fill="#f2f0f7" font-family="Arial, sans-serif" font-size="42" font-weight="700">1920 × 1080</text>
+  <rect x="185" y="520" width="155" height="60" rx="10" fill="#8b5cf6"/><text x="230" y="558" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700">Source</text>
+  <rect x="355" y="520" width="155" height="60" rx="10" fill="#292931" stroke="#4a4854" stroke-width="2"/><text x="397" y="558" fill="#c7c3cd" font-family="Arial, sans-serif" font-size="19">Bounds</text>
+  <rect x="185" y="625" width="325" height="64" rx="10" fill="#8b5cf6"/><text x="316" y="666" fill="#fff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Apply</text>
+  <rect x="640" y="335" width="740" height="410" rx="20" fill="#101013" stroke="#34343c" stroke-width="2"/>
+  <rect x="735" y="405" width="550" height="270" fill="#1c1c23" stroke="#b9a0ff" stroke-width="3" stroke-dasharray="15 10"/>
+  <rect x="845" y="445" width="330" height="190" rx="10" fill="#8b5cf6" opacity=".72"/>
+  <text x="932" y="548" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="700">FRAME</text>
+  <text x="907" y="712" fill="#8f8b98" font-family="Arial, sans-serif" font-size="18">Preview canvas</text>
+</svg>

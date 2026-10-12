@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Align tool demo placeholder</title>
+  <desc id="desc">A clearly labelled mock interface used as temporary documentation media.</desc>
+  <rect width="1600" height="900" fill="#111115"/>
+  <rect x="80" y="70" width="1440" height="760" rx="28" fill="#1b1b20" stroke="#3b3b45" stroke-width="3"/>
+  <rect x="80" y="70" width="1440" height="86" rx="28" fill="#24242b"/>
+  <text x="1260" y="120" fill="#b9a0ff" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">DEMO ASSET</text>
+  <text x="140" y="235" fill="#f2f0f7" font-family="Arial, sans-serif" font-size="46" font-weight="700">Align</text>
+  <text x="140" y="280" fill="#9995a1" font-family="Arial, sans-serif" font-size="21">Six positional controls with an adjustable offset</text>
+  <rect x="140" y="335" width="440" height="410" rx="20" fill="#202027"/>
+  <g fill="#292931" stroke="#4a4854" stroke-width="2">
+    <rect x="190" y="390" width="90" height="90" rx="12"/><rect x="315" y="390" width="90" height="90" rx="12"/><rect x="440" y="390" width="90" height="90" rx="12"/>
+    <rect x="190" y="515" width="90" height="90" rx="12"/><rect x="315" y="515" width="90" height="90" rx="12"/><rect x="440" y="515" width="90" height="90" rx="12"/>
+  </g>
+  <g stroke="#b9a0ff" stroke-width="9" stroke-linecap="round"><path d="M215 425h40M235 425v30"/><path d="M340 435h40M360 415v40"/><path d="M465 455h40M485 425v30"/><path d="M215 560h40M215 540v40"/><path d="M340 560h40M360 540v40"/><path d="M465 560h40M505 540v40"/></g>
+  <text x="190" y="670" fill="#8f8b98" font-family="Arial, sans-serif" font-size="18">Offset</text><rect x="315" y="635" width="215" height="55" rx="8" fill="#151519" stroke="#41414b" stroke-width="2"/><text x="345" y="670" fill="#f2f0f7" font-family="Arial, sans-serif" font-size="20">0 px</text>
+  <rect x="670" y="335" width="710" height="410" rx="20" fill="#151519" stroke="#34343c" stroke-width="2"/>
+  <rect x="815" y="440" width="240" height="165" rx="12" fill="#8b5cf6" opacity=".82"/><rect x="1035" y="510" width="210" height="145" rx="12" fill="#5c3fa8" opacity=".8"/>
+  <path d="M705 540h640" stroke="#b9a0ff" stroke-width="3" stroke-dasharray="12 12"/><text x="920" y="705" fill="#8f8b98" font-family="Arial, sans-serif" font-size="18">Preview canvas</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">RCP Library demo placeholder</title>
+  <desc id="desc">A clearly labelled mock interface used as temporary documentation media.</desc>
+  <rect width="1600" height="900" fill="#111115"/>
+  <rect x="80" y="70" width="1440" height="760" rx="28" fill="#1b1b20" stroke="#3b3b45" stroke-width="3"/>
+  <rect x="80" y="70" width="1440" height="86" rx="28" fill="#24242b"/>
+  <circle cx="130" cy="113" r="11" fill="#8b5cf6"/><circle cx="166" cy="113" r="11" fill="#55525f"/><circle cx="202" cy="113" r="11" fill="#55525f"/>
+  <text x="1260" y="120" fill="#b9a0ff" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">DEMO ASSET</text>
+  <rect x="120" y="200" width="320" height="580" rx="18" fill="#202027"/>
+  <text x="160" y="260" fill="#f2f0f7" font-family="Arial, sans-serif" font-size="34" font-weight="700">RCP Library</text>
+  <rect x="160" y="306" width="240" height="56" rx="10" fill="#8b5cf6"/>
+  <text x="203" y="343" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="700">Create RCP</text>
+  <text x="160" y="430" fill="#8f8b98" font-family="Arial, sans-serif" font-size="18">Library location</text>
+  <rect x="160" y="452" width="240" height="58" rx="8" fill="#151519" stroke="#3b3b45" stroke-width="2"/>
+  <text x="184" y="488" fill="#c7c3cd" font-family="Arial, sans-serif" font-size="18">Connected folder</text>
+  <text x="500" y="246" fill="#f2f0f7" font-family="Arial, sans-serif" font-size="42" font-weight="700">Reusable clip packs</text>
+  <text x="500" y="291" fill="#9995a1" font-family="Arial, sans-serif" font-size="21">Temporary visual preview — replace before release</text>
+  <g fill="#25252c" stroke="#41414b" stroke-width="2">
+    <rect x="500" y="350" width="285" height="180" rx="16"/><rect x="815" y="350" width="285" height="180" rx="16"/><rect x="1130" y="350" width="285" height="180" rx="16"/>
+    <rect x="500" y="560" width="285" height="180" rx="16"/><rect x="815" y="560" width="285" height="180" rx="16"/><rect x="1130" y="560" width="285" height="180" rx="16"/>
+  </g>
+  <g fill="#b9a0ff" font-family="Arial, sans-serif" font-size="22" font-weight="700">
+    <text x="535" y="405">Pack 01</text><text x="850" y="405">Pack 02</text><text x="1165" y="405">Pack 03</text>
+    <text x="535" y="615">Pack 04</text><text x="850" y="615">Pack 05</text><text x="1165" y="615">Pack 06</text>
+  </g>
+</svg>

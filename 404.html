@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#151519">
+  <title>Opening Product Hub…</title>
+  <style>html{color-scheme:dark;background:#151519;color:#f2f0f7;font:14px Arial,Helvetica,"Liberation Sans",sans-serif}body{display:grid;min-height:100vh;margin:0;place-items:center}p{color:#aaa7b1}</style>
+  <script>
+    (function () {
+      var keep = location.hostname.endsWith("github.io") ? 1 : 0;
+      var parts = location.pathname.split("/").filter(Boolean);
+      var base = "/" + parts.slice(0, keep).join("/") + (keep ? "/" : "");
+      var requested = location.pathname + location.search + location.hash;
+      location.replace(base + "?route=" + encodeURIComponent(requested));
+    }());
+  </script>
+</head>
+<body><p>Opening KuhyaKuya Product Hub…</p></body>
+</html>
