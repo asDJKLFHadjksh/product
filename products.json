@@ -66,6 +66,176 @@
           ]
         }
       ],
+      "legal": {
+        "privacy": {
+          "title": "Privacy Policy",
+          "summary": "A source-audited draft describing how the current EZ Guys Complete development build handles project, media, and local preference data.",
+          "draft": true,
+          "draftDate": "17 October 2026",
+          "sections": [
+            {
+              "id": "status-and-scope",
+              "navTitle": "Status and scope",
+              "title": "1. Status and scope",
+              "paragraphs": [
+                "This draft applies specifically to the current development build of EZ Guys Complete and its product pages in the KuhyaKuya Product Hub. It is based on a review of the plugin source and website code available on the draft date.",
+                "It is not a final or binding privacy policy. Product behavior, distribution, hosting, support, and commercial services must be reviewed again before publication."
+              ],
+              "review": "Confirm the legal operator name, the countries and users covered by the policy, the effective date, and whether the website and plugin should share one policy or use separate notices."
+            },
+            {
+              "id": "data-handled",
+              "navTitle": "Data handled",
+              "title": "2. Data handled by the current plugin",
+              "paragraphs": [
+                "EZ Guys Complete works inside Adobe Premiere Pro. To perform its editing and library features, the current source reads information from the active project, selected sequences and clips, and user-selected files or folders."
+              ],
+              "items": [
+                "Project and sequence information needed to align, distribute, resize, import, or create project content.",
+                "Media file paths, file names, file sizes, and related clip information used to review, copy, relink, or package media.",
+                "RCP pack metadata such as pack name, group, category, tags, sequence identifiers, asset mode, timestamps, thumbnails, and asset summaries.",
+                "Project-local RCP registry information used to track installed packs and their sequence instances."
+              ]
+            },
+            {
+              "id": "local-storage",
+              "navTitle": "Local storage",
+              "title": "3. Local storage and files",
+              "paragraphs": [
+                "The reviewed build stores a persistent token for the user-selected RCP library folder in UXP local storage. It also stores custom category and group lists, tool layout preferences, and—only if the separate draft legal system is later enabled—a local record of agreement acceptance.",
+                "RCP packs, copied media, thumbnails, manifests, and project-local registry files are written to locations selected by the user or associated with the Premiere project. These files remain under the user's local file and project management."
+              ],
+              "review": "Approve a retention and deletion statement. The current source does not define a central retention schedule, automatic cloud deletion process, or account-level export workflow."
+            },
+            {
+              "id": "network-connections",
+              "navTitle": "Network connections",
+              "title": "4. Network connections",
+              "paragraphs": [
+                "The audited plugin manifest does not request a network permission, and the reviewed plugin source contains no telemetry, analytics, account sign-in, advertising, or remote upload implementation. The plugin can open an external legal-document URL only if a product owner later configures one; that URL is empty in the reviewed build.",
+                "The Product Hub loads its product catalog from the same website. The EZ Guys product page currently embeds an optional YouTube video using YouTube's privacy-enhanced domain, which causes a connection to a Google service when the embed is loaded."
+              ],
+              "review": "Re-audit the release build and production website before publication. Confirm whether hosting logs, analytics, crash reporting, licensing checks, update checks, support forms, or other network services will be added."
+            },
+            {
+              "id": "third-parties",
+              "navTitle": "Third parties",
+              "title": "5. Third-party services",
+              "paragraphs": [
+                "EZ Guys Complete operates within Adobe Premiere Pro and depends on Adobe's UXP environment. Adobe may process information under its own terms and privacy notices independently of KuhyaKuya.",
+                "Embedded YouTube content and links to marketplaces, payment providers, download hosts, or support services may be governed by those providers' policies. The Product Hub displays a warning before product-access links leave KuhyaKuya-controlled domains."
+              ],
+              "review": "List every production provider and link to its privacy notice after the final hosting, distribution, payment, video, support, and update services are selected."
+            },
+            {
+              "id": "control-and-security",
+              "navTitle": "Control and security",
+              "title": "6. User control and security",
+              "paragraphs": [
+                "Users choose the RCP library location and can manage the project, media, pack, manifest, thumbnail, and registry files created there. Removing plugin-local preferences or folder-access tokens may require clearing the plugin's UXP storage or uninstalling the plugin, depending on the final distribution method.",
+                "No software or storage method can be guaranteed completely secure. Users should keep backups and apply appropriate access controls to projects and media, particularly when using shared folders."
+              ],
+              "review": "Confirm supported deletion steps, backup guidance, security contact procedure, and any response commitments for the production release."
+            },
+            {
+              "id": "contact-and-changes",
+              "navTitle": "Contact and changes",
+              "title": "7. Contact and policy changes",
+              "paragraphs": [
+                "A verified privacy contact has not yet been approved for publication. This draft must not be used as the public contact mechanism.",
+                "If product behavior or service providers change, this notice should be updated and the effective date should identify the published revision."
+              ],
+              "review": "Provide the public privacy email or support URL, operator identity and address where legally required, effective date, notice method for material changes, and any jurisdiction-specific rights language."
+            }
+          ]
+        },
+        "terms": {
+          "title": "Terms of Service",
+          "summary": "A review draft covering proposed use of EZ Guys Complete without inventing unapproved license, purchase, refund, or liability terms.",
+          "draft": true,
+          "draftDate": "17 October 2026",
+          "sections": [
+            {
+              "id": "status-and-acceptance",
+              "navTitle": "Status and acceptance",
+              "title": "1. Status and acceptance",
+              "paragraphs": [
+                "These Terms of Service are a working draft for EZ Guys Complete. They do not create final binding terms and should not be presented as accepted terms until the product owner and qualified legal reviewer approve the complete document, publication method, and effective date.",
+                "The reviewed plugin includes an experimental local agreement interface, but its legal document is empty, its version is unset, and enforcement is disabled. This website draft does not activate or replace that system."
+              ],
+              "review": "Approve the contracting party, acceptance flow, minimum user age or authority, effective date, and the relationship between these website terms and any in-plugin or marketplace agreement."
+            },
+            {
+              "id": "product-use",
+              "navTitle": "Product use",
+              "title": "2. Product use",
+              "paragraphs": [
+                "EZ Guys Complete is an Adobe Premiere Pro UXP toolkit for workflows including reusable clip packs, clip alignment and distribution, and sequence framing. The current Product Hub marks it as in development.",
+                "Users are responsible for reviewing changes to their projects, maintaining backups, and confirming that they have permission to use, copy, package, or relink the media and project materials they select."
+              ],
+              "review": "Confirm the supported operating systems, Premiere versions, release status, intended audience, and whether any production-use limitations apply."
+            },
+            {
+              "id": "license",
+              "navTitle": "License",
+              "title": "3. License",
+              "paragraphs": [
+                "No final license grant, device limit, user-seat rule, transfer right, commercial-use permission, source-code right, or ownership clause is approved in the available materials. Those rights must not be inferred from access to a development build or this website."
+              ],
+              "review": "Specify the granted license, duration, territory, permitted number of users and devices, commercial-use rights, transfer rules, intellectual-property ownership, and any open-source or third-party notices."
+            },
+            {
+              "id": "purchases-and-refunds",
+              "navTitle": "Purchases and refunds",
+              "title": "4. Purchases, billing, and refunds",
+              "paragraphs": [
+                "The current website does not publish a price or sell EZ Guys Complete. Its product-access URL is a placeholder and must not be treated as an offer, checkout, or proof of availability.",
+                "If the product is later distributed through Adobe or another marketplace, the storefront may handle payment, tax, receipts, refunds, and account records under its own terms."
+              ],
+              "review": "Approve pricing, currency, taxes, payment provider, subscription or one-time purchase model, trial terms, refund and cancellation rules, and how conflicts with marketplace terms are resolved."
+            },
+            {
+              "id": "updates-and-support",
+              "navTitle": "Updates and support",
+              "title": "5. Updates, compatibility, and support",
+              "paragraphs": [
+                "Features, compatibility, documentation, and release plans may change while the product is in development. No update schedule, support period, service level, or backward-compatibility commitment is stated in the audited materials.",
+                "Adobe Premiere Pro, UXP, operating-system, and third-party service changes may affect availability or behavior independently of KuhyaKuya."
+              ],
+              "review": "Define the supported versions, update entitlement, end-of-support policy, support channel, response expectations, and treatment of breaking changes."
+            },
+            {
+              "id": "restrictions",
+              "navTitle": "Restrictions",
+              "title": "6. Restrictions and responsible use",
+              "paragraphs": [
+                "No final contractual restriction list is approved. At minimum, users remain responsible for complying with applicable law, Adobe's terms, and the rights attached to any media or project content they process.",
+                "Proposed restrictions—such as prohibitions on unauthorized redistribution, harmful use, security circumvention, or misuse of third-party content—require owner and legal approval before they can be binding."
+              ],
+              "review": "Approve the exact prohibited conduct, redistribution rules, reverse-engineering position, enforcement process, and any exceptions required by applicable law."
+            },
+            {
+              "id": "risk-and-liability",
+              "navTitle": "Risk and liability",
+              "title": "7. Project risk, warranties, and liability",
+              "paragraphs": [
+                "The plugin can modify Premiere projects, copy or relink media, create files, and change sequence or clip properties. Users should work on backed-up projects and verify results before relying on them in production.",
+                "No warranty disclaimer, limitation of liability, indemnity, remedy, or liability cap is approved in the available materials. This draft therefore does not state one as a final term."
+              ],
+              "review": "Have qualified counsel approve warranty, consumer-rights, limitation-of-liability, data-loss, indemnity, and exclusive-remedy language for the intended markets."
+            },
+            {
+              "id": "termination-and-contact",
+              "navTitle": "Termination and contact",
+              "title": "8. Termination, governing law, and contact",
+              "paragraphs": [
+                "No final suspension, termination, dispute, governing-law, venue, or legal-notice process has been approved. A verified public contact channel is also not yet specified."
+              ],
+              "review": "Approve termination rights and effects, governing law and venue, dispute process, severability and waiver clauses, assignment rules, change-notice process, and a public legal or support contact."
+            }
+          ]
+        }
+      },
       "documentation": {
         "description": "Product guides, usage notes, and supporting information.",
         "topics": [

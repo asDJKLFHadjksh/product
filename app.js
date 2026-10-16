@@ -26,6 +26,7 @@ const fallbackData = {
     media: { demoVideo: { youtubeId: "", title: "" } },
     sections: [],
     documentation: { description: "", topics: [] },
+    legal: {},
     changelog: []
   }]
 };
@@ -58,6 +59,7 @@ function parseRoute() {
   if (parts.length === 1) return { view: "product", slug: parts[0] };
   if (parts.length === 2 && parts[1] === "docs") return { view: "docs", slug: parts[0] };
   if (parts.length === 2 && parts[1] === "changelog") return { view: "changelog", slug: parts[0] };
+  if (parts.length === 2 && ["privacy", "terms"].includes(parts[1])) return { view: parts[1], slug: parts[0] };
   return { view: "not-found", slug: parts[0] || "" };
 }
 
@@ -99,6 +101,12 @@ function productSections(product) {
 function productDocs(product) {
   if (product.documentation && Array.isArray(product.documentation.topics)) return product.documentation.topics;
   return Array.isArray(product.docs) ? product.docs : [];
+}
+
+function productLegalDocument(product, type) {
+  const legal = product.legal && typeof product.legal === "object" ? product.legal : {};
+  const document = legal[type];
+  return document && typeof document === "object" && document.title ? document : null;
 }
 
 function productMeta(product) {
@@ -346,9 +354,13 @@ function renderProduct(product) {
   const facts = renderProductFacts(product);
   const demoVideo = renderMedia(product);
   const primaryAction = productPrimaryAction(product);
+  const privacy = productLegalDocument(product, "privacy");
+  const terms = productLegalDocument(product, "terms");
   const resourceLinks = [
     docsAvailable ? `<a href="${routeUrl(`${product.id}/docs`)}"><span>Documentation</span><small>${docs.length} published topics</small></a>` : "",
-    changelogAvailable ? `<a href="${routeUrl(`${product.id}/changelog`)}"><span>Changelog</span><small>${product.changelog.length} published entries</small></a>` : ""
+    changelogAvailable ? `<a href="${routeUrl(`${product.id}/changelog`)}"><span>Changelog</span><small>${product.changelog.length} published entries</small></a>` : "",
+    privacy ? `<a href="${routeUrl(`${product.id}/privacy`)}"><span>${esc(privacy.title)}</span><small>${privacy.draft ? "Draft for owner review" : "Product privacy information"}</small></a>` : "",
+    terms ? `<a href="${routeUrl(`${product.id}/terms`)}"><span>${esc(terms.title)}</span><small>${terms.draft ? "Draft for owner review" : "Product terms"}</small></a>` : ""
   ].filter(Boolean).join("");
   $("#app").innerHTML = `
     ${renderBreadcrumb(product)}
@@ -393,6 +405,56 @@ function renderDocBlock(block) {
   if (block.type === "list") return `<ul>${(block.items || []).map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`;
   if (block.type === "note") return `<aside class="doc-note">${esc(block.text)}</aside>`;
   return "";
+}
+
+function renderLegalSection(section, index) {
+  const id = statusClass(section.id || section.title || `section-${index + 1}`) || `section-${index + 1}`;
+  const paragraphs = Array.isArray(section.paragraphs) ? section.paragraphs : [];
+  const items = Array.isArray(section.items) ? section.items : [];
+  return `<section id="${esc(id)}" class="legal-section" aria-labelledby="${esc(id)}-heading">
+    <h2 id="${esc(id)}-heading">${esc(section.title || `Section ${index + 1}`)}</h2>
+    ${paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}
+    ${items.length ? `<ul>${items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>` : ""}
+    ${section.review ? `<aside class="owner-review"><strong>Owner approval required</strong><p>${esc(section.review)}</p></aside>` : ""}
+  </section>`;
+}
+
+function renderLegal(product, type) {
+  const document = productLegalDocument(product, type);
+  const label = type === "privacy" ? "Privacy Policy" : "Terms of Service";
+  if (!document) {
+    renderUnavailable(product, label, `No ${label.toLowerCase()} has been published for this product.`);
+    return;
+  }
+
+  const sections = Array.isArray(document.sections) ? document.sections : [];
+  $("#app").innerHTML = `
+    ${renderBreadcrumb(product, document.title)}
+    <header class="page-heading legal-heading">
+      <p class="eyebrow">${esc(product.name)} / Legal</p>
+      <h1>${esc(document.title)}</h1>
+      <p>${esc(document.summary || `Legal information for ${product.name}.`)}</p>
+      <div class="legal-meta">
+        <span><strong>Status</strong>${document.draft ? "Draft — not final" : "Published"}</span>
+        ${document.draftDate ? `<span><strong>Draft date</strong>${esc(document.draftDate)}</span>` : ""}
+        <span><strong>Applies to</strong>${esc(product.name)}</span>
+      </div>
+    </header>
+    ${document.draft ? `<aside class="legal-status" role="note"><div><span>Review notice</span><strong>This document is a working draft, not final legal advice or a binding published policy.</strong></div><p>Sections marked “Owner approval required” must be completed and reviewed before publication.</p></aside>` : ""}
+    <div class="legal-layout">
+      <aside class="legal-sidebar">
+        <p class="section-label">On this page</p>
+        <nav aria-label="${esc(document.title)} sections">${sections.map((section, index) => {
+          const id = statusClass(section.id || section.title || `section-${index + 1}`) || `section-${index + 1}`;
+          return `<a href="#${esc(id)}">${esc(section.navTitle || section.title || `Section ${index + 1}`)}</a>`;
+        }).join("")}</nav>
+        <a class="legal-switch" href="${routeUrl(`${product.id}/${type === "privacy" ? "terms" : "privacy"}`)}">Read ${type === "privacy" ? "Terms of Service" : "Privacy Policy"}</a>
+      </aside>
+      <article class="legal-article">${sections.map(renderLegalSection).join("")}</article>
+    </div>`;
+
+  document.title = `${document.title} — ${product.name}`;
+  updateDescription(document.summary || `${document.title} for ${product.name}.`);
 }
 
 function normalizeScreenshot(item, productName, toolName, index) {
@@ -524,7 +586,8 @@ function renderContextNav(route, product) {
   }
   const hasDocs = productDocs(product).length > 0;
   const hasChangelog = Array.isArray(product.changelog) && product.changelog.length > 0;
-  container.innerHTML = `<a class="${route.view === "product" ? "active" : ""}" href="${routeUrl(product.id)}">${esc(product.name)}</a>${hasDocs ? `<a class="${route.view === "docs" ? "active" : ""}" href="${routeUrl(`${product.id}/docs`)}">Documentation</a>` : ""}${hasChangelog ? `<a class="${route.view === "changelog" ? "active" : ""}" href="${routeUrl(`${product.id}/changelog`)}">Changelog</a>` : ""}`;
+  const hasLegal = productLegalDocument(product, "privacy") || productLegalDocument(product, "terms");
+  container.innerHTML = `<a class="${route.view === "product" ? "active" : ""}" href="${routeUrl(product.id)}">${esc(product.name)}</a>${hasDocs ? `<a class="${route.view === "docs" ? "active" : ""}" href="${routeUrl(`${product.id}/docs`)}">Documentation</a>` : ""}${hasChangelog ? `<a class="${route.view === "changelog" ? "active" : ""}" href="${routeUrl(`${product.id}/changelog`)}">Changelog</a>` : ""}${hasLegal ? `<a class="${["privacy", "terms"].includes(route.view) ? "active" : ""}" href="${routeUrl(`${product.id}/privacy`)}">Legal</a>` : ""}`;
 }
 
 function renderRoute() {
@@ -539,6 +602,7 @@ function renderRoute() {
   else if (route.view === "product") renderProduct(product);
   else if (route.view === "docs") renderDocs(product);
   else if (route.view === "changelog") renderChangelog(product);
+  else if (["privacy", "terms"].includes(route.view)) renderLegal(product, route.view);
   else renderNotFound(route.slug);
 }
 

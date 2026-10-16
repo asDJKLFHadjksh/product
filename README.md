@@ -8,6 +8,8 @@ Static product directory and product-scoped documentation for `product.kuhyakuya
 - `/ez-guys-pr/` — EZ Guys product detail
 - `/ez-guys-pr/docs/` — EZ Guys documentation
 - `/ez-guys-pr/changelog/` — release history, with an explicit empty state until verified entries exist
+- `/ez-guys-pr/privacy/` — product-specific Privacy Policy draft
+- `/ez-guys-pr/terms/` — product-specific Terms of Service draft
 
 The checked-in route folders make direct URLs and refreshes work on GitHub Pages. `404.html` redirects unknown clean URLs through the root application so future product routes can still be resolved from `products.json`. Browser Back/Forward navigation is supported, including documentation topics stored in `?topic=`.
 
@@ -62,6 +64,9 @@ Products use a general, dashboard-friendly schema. Product category, metadata, s
 - `metadata` accepts any label/value pairs, so product types are not restricted to plugin-specific fields.
 - `sections` are rendered by their `type`. The current schema supports `item-list` and `content` sections.
 - `documentation`, `media`, and `changelog` may be omitted when a product does not use them.
+- `legal.privacy` and `legal.terms` are optional product-scoped documents. Their draft status and section-level `review` notes keep unresolved legal or product-owner decisions visible instead of turning them into unsupported claims.
+
+The EZ Guys legal pages are review drafts, not final legal documents. Before publication, the product owner must approve the operator identity, contact details, effective dates, release data practices, license grant, purchase and refund rules, support commitments, restrictions, warranty and liability language, termination, dispute process, and governing law. Re-audit the production plugin and all deployed third-party services when those decisions are made.
 
 One optional demo video is configured per product:
 
