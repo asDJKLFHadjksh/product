@@ -73,6 +73,13 @@
             }
           }
         },
+        "legal": {
+          "type": "object",
+          "properties": {
+            "privacy": { "$ref": "#/$defs/legalDocument" },
+            "terms": { "$ref": "#/$defs/legalDocument" }
+          }
+        },
         "changelog": { "type": "array" }
       }
     },
@@ -99,6 +106,32 @@
         "summary": { "type": "string" },
         "screenshots": { "type": "array" },
         "blocks": { "type": "array" }
+      }
+    },
+    "legalDocument": {
+      "type": "object",
+      "required": ["title", "sections"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string" },
+        "draft": { "type": "boolean" },
+        "draftDate": { "type": "string" },
+        "sections": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/legalSection" }
+        }
+      }
+    },
+    "legalSection": {
+      "type": "object",
+      "required": ["id", "title"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "navTitle": { "type": "string" },
+        "title": { "type": "string", "minLength": 1 },
+        "paragraphs": { "type": "array", "items": { "type": "string" } },
+        "items": { "type": "array", "items": { "type": "string" } },
+        "review": { "type": "string" }
       }
     }
   }
